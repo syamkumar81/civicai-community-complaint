@@ -375,3 +375,24 @@
     font-size: 24px;
   }
 }
+/* =========================================================
+   CIVICAI REGISTER INPUT FOCUS
+   Highlight only — NO rectangle border
+========================================================= */
+
+.civic-register-page input:focus,
+.civic-register-page textarea:focus,
+.civic-register-page select:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.civic-register-page .civic-input-box:focus-within {
+  border-color: transparent !important;
+  outline: none !important;
+
+  box-shadow:
+    0 0 0 1px rgba(6, 182, 212, 0.08),
+    0 0 18px rgba(6, 182, 212, 0.18),
+    0 0 35px rgba(59, 130, 246, 0.08);
+}
