@@ -80,8 +80,8 @@ function AdminDashboard({ navigate }) {
       };
 
       const [analyticsResponse, complaintsResponse] = await Promise.all([
-        fetch("http://127.0.0.1:8000/admin/analytics", { headers }),
-        fetch("http://127.0.0.1:8000/admin/complaints", { headers }),
+        fetch("https://civicai-community-complaint.onrender.com/admin/analytics", { headers }),
+        fetch("https://civicai-community-complaint.onrender.com/admin/complaints", { headers }),
       ]);
 
       if (

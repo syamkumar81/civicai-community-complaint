@@ -58,7 +58,7 @@ function MyComplaints({ navigate }) {
       // -----------------------------------------------------
 
       const response = await fetch(
-        `http://127.0.0.1:8000/complaints/?user_id=${encodeURIComponent(
+        `https://civicai-community-complaint.onrender.com/complaints/?user_id=${encodeURIComponent(
           user.id
         )}`
       );

@@ -88,7 +88,7 @@ function Users({ navigate }) {
         return;
       }
 
-      const response = await fetch("http://127.0.0.1:8000/admin/users", {
+      const response = await fetch("https://civicai-community-complaint.onrender.com/admin/users", {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",

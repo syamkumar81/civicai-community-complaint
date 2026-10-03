@@ -14,7 +14,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { supabase } from "../../supabaseClient";
 
-const API_URL = "http://127.0.0.1:8000/complaints/";
+const API_URL = "https://civicai-community-complaint.onrender.com/complaints/";
 
 function ReportComplaint({ navigate }) {
   const [submitted, setSubmitted] = useState(false);

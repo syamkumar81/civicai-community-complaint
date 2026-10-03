@@ -61,7 +61,7 @@ function AdminLogin({ navigate }) {
       }
 
       // 2. Verify admin role on backend
-      const response = await fetch("http://127.0.0.1:8000/admin/verify", {
+      const response = await fetch("https://civicai-community-complaint.onrender.com/admin/verify", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",

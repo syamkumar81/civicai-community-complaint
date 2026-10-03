@@ -35,7 +35,7 @@ function TrackComplaint({ navigate }) {
 
     try {
       const response = await fetch(
-        `http://127.0.0.1:8000/complaints/${encodeURIComponent(id)}`
+        `https://civicai-community-complaint.onrender.com/complaints/${encodeURIComponent(id)}`
       );
 
       const data = await response.json();

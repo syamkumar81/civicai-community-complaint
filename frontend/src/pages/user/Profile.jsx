@@ -46,7 +46,7 @@ function Profile({ navigate }) {
 
       // Get profile from your FastAPI backend
       const response = await fetch(
-        `http://127.0.0.1:8000/profile?email=${encodeURIComponent(
+        `https://civicai-community-complaint.onrender.com/profile?email=${encodeURIComponent(
           user.email
         )}`
       );

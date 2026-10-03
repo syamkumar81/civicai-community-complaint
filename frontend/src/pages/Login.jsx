@@ -64,7 +64,7 @@ function Login({ navigate }) {
       }
 
       const profileResponse = await fetch(
-        `http://127.0.0.1:8000/profile?email=${encodeURIComponent(email.trim())}`
+        `https://civicai-community-complaint.onrender.com/profile?email=${encodeURIComponent(email.trim())}`
       );
 
       if (!profileResponse.ok) {

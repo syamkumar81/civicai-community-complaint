@@ -61,7 +61,7 @@ function App() {
           if (isAdminStored || email === "admin@civicai.com") {
             try {
               const adminResponse = await fetch(
-                "http://127.0.0.1:8000/admin/verify",
+                "https://civicai-community-complaint.onrender.com/admin/verify",
                 {
                   headers: {
                     Authorization: `Bearer ${session.access_token}`,
@@ -103,7 +103,7 @@ function App() {
 
           // 2. CITIZEN USER SESSION RESTORE
           const response = await fetch(
-            `http://127.0.0.1:8000/profile?email=${encodeURIComponent(email)}`
+            `https://civicai-community-complaint.onrender.com/profile?email=${encodeURIComponent(email)}`
           );
 
           if (response.ok) {
