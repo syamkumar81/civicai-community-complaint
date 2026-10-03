@@ -1,0 +1,1111 @@
+/* ==========================================================================
+   CIVICAI FUTURISTIC AI-POWERED LOGIN EXPERIENCE
+   ========================================================================== */
+
+:root {
+  --civic-bg-dark: #030712;
+  --civic-bg-card: rgba(8, 17, 34, 0.72);
+  --civic-card-border: rgba(56, 189, 248, 0.16);
+  --civic-cyan: #06b6d4;
+  --civic-cyan-glow: rgba(6, 182, 212, 0.35);
+  --civic-electric: #38bdf8;
+  --civic-blue: #3b82f6;
+  --civic-indigo: #6366f1;
+  --civic-emerald: #10b981;
+  --civic-text-primary: #f8fafc;
+  --civic-text-secondary: #94a3b8;
+  --civic-text-muted: #64748b;
+}
+
+/* Page Root Container */
+.civic-login-page {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--civic-bg-dark);
+  color: var(--civic-text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 24px 24px;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  box-sizing: border-box;
+}
+
+/* Background Atmosphere Layers */
+.civic-login-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.civic-bg-gradient-mesh {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(6, 182, 212, 0.12) 0%, transparent 45%),
+    radial-gradient(circle at 85% 75%, rgba(99, 102, 241, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.08) 0%, transparent 60%),
+    radial-gradient(circle at 80% 15%, rgba(14, 165, 233, 0.1) 0%, transparent 40%),
+    #030712;
+}
+
+.civic-bg-cyber-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(56, 189, 248, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(56, 189, 248, 0.04) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse at 50% 50%, black 40%, transparent 80%);
+}
+
+.civic-bg-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.civic-orb-1 {
+  width: 550px;
+  height: 550px;
+  top: -120px;
+  left: -80px;
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.28) 0%, rgba(59, 130, 246, 0.05) 70%, transparent 100%);
+  animation: civicFloatSlow 18s ease-in-out infinite alternate;
+}
+
+.civic-orb-2 {
+  width: 600px;
+  height: 600px;
+  bottom: -150px;
+  right: -100px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.25) 0%, rgba(14, 165, 233, 0.05) 70%, transparent 100%);
+  animation: civicFloatSlow 22s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes civicFloatSlow {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(30px, -20px) scale(1.08); }
+  100% { transform: translate(-20px, 30px) scale(0.96); }
+}
+
+/* Split-Screen Main Layout */
+.civic-login-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1380px;
+  display: grid;
+  grid-template-columns: 1.12fr 0.88fr;
+  align-items: center;
+  gap: 44px;
+  margin: auto;
+}
+
+/* ==========================================================================
+   LEFT SIDE: CIVICAI BRANDING & FUTURISTIC AI CIVIC VISUAL
+   ========================================================================== */
+
+.civic-brand-showcase {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 22px;
+  padding: 10px 14px;
+}
+
+/* Top Header & Brand Identity */
+.civic-brand-header {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.civic-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  background: rgba(8, 30, 56, 0.65);
+  border: 1px solid rgba(56, 189, 248, 0.24);
+  backdrop-filter: blur(12px);
+  width: fit-content;
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.12);
+}
+
+.civic-status-dot-pulse {
+  position: relative;
+  width: 8px;
+  height: 8px;
+}
+
+.civic-dot-core {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: #22d3ee;
+  box-shadow: 0 0 10px #22d3ee;
+}
+
+.civic-dot-ring {
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 1.5px solid #22d3ee;
+  opacity: 0.7;
+  animation: civicPing 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes civicPing {
+  0% { transform: scale(0.9); opacity: 0.9; }
+  70% { transform: scale(2.2); opacity: 0; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+
+.civic-status-text {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #67e8f9;
+}
+
+.civic-brand-identity {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.civic-brand-logo-badge {
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #06b6d4, #2563eb 60%, #4f46e5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  box-shadow:
+    0 10px 25px rgba(6, 182, 212, 0.35),
+    inset 0 1px 1px rgba(255, 255, 255, 0.4);
+  position: relative;
+}
+
+.civic-brand-logo-badge::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 19px;
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  pointer-events: none;
+}
+
+.civic-brand-titles h1 {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin: 0;
+  line-height: 1.1;
+  background: linear-gradient(135deg, #ffffff 40%, #bae6fd 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.civic-brand-titles p {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #64748b;
+  margin: 3px 0 0 0;
+}
+
+/* Value Proposition */
+.civic-brand-statement {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.civic-brand-statement h2 {
+  font-size: clamp(28px, 2.7vw, 40px);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+  margin: 0;
+  color: #f1f5f9;
+}
+
+.civic-gradient-text {
+  background: linear-gradient(110deg, #38bdf8 10%, #60a5fa 45%, #a855f7 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+.civic-brand-statement p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #94a3b8;
+  max-width: 540px;
+  margin: 0;
+}
+
+/* ==========================================================================
+   UNIFIED SMART COMMUNITY & CIVIC ECOSYSTEM VISUAL
+   ========================================================================== */
+
+.civic-visual-stage {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 55% 35%, rgba(14, 116, 144, 0.16) 0%, rgba(6, 20, 42, 0.45) 55%, transparent 100%),
+    rgba(3, 11, 24, 0.72);
+  border: 1px solid rgba(56, 189, 248, 0.18);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.1),
+    0 25px 60px -15px rgba(0, 0, 0, 0.7),
+    0 0 45px -10px rgba(6, 182, 212, 0.15);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hero Outer Shell */
+.civic-hero-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+/* Atmospheric Glow Background */
+.civic-hero-atmosphere {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 65% 20%, rgba(56, 189, 248, 0.1) 0%, transparent 45%),
+    radial-gradient(circle at 25% 85%, rgba(245, 158, 11, 0.06) 0%, transparent 40%),
+    radial-gradient(circle at 85% 80%, rgba(16, 185, 129, 0.06) 0%, transparent 40%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Top Scene HUD Header Bar */
+.civic-scene-hud-top {
+  position: relative;
+  z-index: 6;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px 4px 18px;
+}
+
+.civic-hud-tag-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.civic-hud-beacon {
+  position: relative;
+  width: 7px;
+  height: 7px;
+}
+
+.civic-hud-beacon-core {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: #38bdf8;
+  box-shadow: 0 0 8px #38bdf8;
+}
+
+.civic-hud-beacon-ring {
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 1.5px solid #38bdf8;
+  opacity: 0.6;
+  animation: civicPing 2.2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.civic-hud-tag-title {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #7dd3fc;
+}
+
+.civic-hud-telemetry-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  background: rgba(14, 165, 233, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  font-size: 9.5px;
+  font-weight: 700;
+  color: #a5f3fc;
+  letter-spacing: 0.04em;
+}
+
+.civic-hud-wifi-icon {
+  color: #38bdf8;
+}
+
+/* Vector Canvas Area */
+.civic-hero-svg-canvas {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  flex: 1;
+  min-height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 8px;
+  box-sizing: border-box;
+}
+
+.civic-ecosystem-svg {
+  width: 100%;
+  height: 100%;
+  max-height: 280px;
+  filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.5));
+}
+
+/* Micro-Interactions on SVG Elements */
+.interactive-building,
+.incident-active-hazard,
+.municipal-hub-sector,
+.service-vehicle,
+.interactive-station,
+.incident-resolved {
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.interactive-building:hover,
+.municipal-hub-sector:hover,
+.interactive-station:hover {
+  filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.45));
+}
+
+.incident-active-hazard:hover {
+  filter: drop-shadow(0 0 12px rgba(245, 158, 11, 0.6));
+}
+
+.incident-resolved:hover {
+  filter: drop-shadow(0 0 12px rgba(16, 185, 129, 0.6));
+}
+
+.service-vehicle:hover {
+  filter: drop-shadow(0 0 10px rgba(34, 211, 238, 0.6));
+}
+
+/* Bottom Integrated Workflow Ribbon */
+.civic-workflow-ribbon {
+  position: relative;
+  z-index: 6;
+  display: grid;
+  grid-template-columns: 1fr auto 1.1fr auto 1.15fr auto 1.1fr;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: rgba(4, 13, 26, 0.88);
+  border-top: 1px solid rgba(56, 189, 248, 0.16);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.civic-step-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.civic-step-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 7px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.civic-step-icon.step-report {
+  background: rgba(245, 158, 11, 0.16);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.2);
+}
+
+.civic-step-icon.step-ai {
+  background: rgba(56, 189, 248, 0.16);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.2);
+}
+
+.civic-step-icon.step-dispatch {
+  background: rgba(99, 102, 241, 0.16);
+  color: #a5b4fc;
+  border: 1px solid rgba(99, 102, 241, 0.35);
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.2);
+}
+
+.civic-step-icon.step-resolved {
+  background: rgba(16, 185, 129, 0.16);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.2);
+}
+
+.civic-step-meta {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.civic-step-phase {
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #f1f5f9;
+  line-height: 1.1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.civic-step-label {
+  font-size: 8px;
+  font-weight: 600;
+  color: #94a3b8;
+  margin-top: 1px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.civic-step-connector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #475569;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   RIGHT SIDE: GLASS-STYLE AUTHENTICATION CARD
+   ========================================================================== */
+
+.civic-auth-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 490px;
+  margin: 0 auto;
+}
+
+/* Mobile Brand Header */
+.civic-mobile-brand {
+  display: none;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.civic-mobile-brand .civic-brand-logo-badge {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+}
+
+.civic-mobile-brand h2 {
+  font-size: 20px;
+  font-weight: 800;
+  margin: 0;
+  color: #f8fafc;
+}
+
+.civic-mobile-brand p {
+  font-size: 11px;
+  color: #64748b;
+  margin: 0;
+  font-weight: 600;
+}
+
+/* The Glass Authentication Card */
+.civic-glass-card {
+  position: relative;
+  width: 100%;
+  background:
+    linear-gradient(145deg, rgba(15, 28, 54, 0.78) 0%, rgba(6, 15, 30, 0.86) 100%);
+  border-radius: 24px;
+  border: 1px solid rgba(56, 189, 248, 0.18);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  box-shadow:
+    0 30px 80px -15px rgba(0, 0, 0, 0.75),
+    0 0 50px -10px rgba(6, 182, 212, 0.12),
+    inset 0 1px 1px rgba(255, 255, 255, 0.12),
+    inset 0 -1px 1px rgba(0, 0, 0, 0.4);
+  padding: 30px 30px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Card Glow Effect Behind Top Edge */
+.civic-card-glow-strip {
+  position: absolute;
+  top: 0;
+  left: 15%;
+  right: 15%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #38bdf8 30%, #818cf8 70%, transparent);
+  box-shadow: 0 0 20px 2px rgba(56, 189, 248, 0.6);
+  pointer-events: none;
+}
+
+/* Card Header */
+.civic-card-header {
+  margin-bottom: 18px;
+}
+
+.civic-card-badge-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.civic-card-brand-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #f1f5f9;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.civic-card-logo-mini {
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #06b6d4, #2563eb);
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  box-shadow: 0 0 12px rgba(6, 182, 212, 0.4);
+}
+
+.civic-welcome-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.22);
+  color: #38bdf8;
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.civic-welcome-chip-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #38bdf8;
+  box-shadow: 0 0 8px #38bdf8;
+}
+
+.civic-card-header h2 {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  margin: 0 0 6px 0;
+  line-height: 1.15;
+}
+
+.civic-card-header p {
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: #94a3b8;
+  margin: 0;
+}
+
+/* ==========================================================================
+   ROLE SELECTOR: CITIZEN vs ADMINISTRATOR
+   ========================================================================== */
+
+.civic-role-selector-wrap {
+  margin-bottom: 18px;
+}
+
+.civic-role-selector-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #64748b;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.civic-role-segmented-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: rgba(4, 11, 24, 0.7);
+  border: 1px solid rgba(56, 189, 248, 0.12);
+  border-radius: 14px;
+  padding: 4px;
+  gap: 4px;
+  position: relative;
+}
+
+.civic-role-tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: #94a3b8;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.civic-role-tab:hover {
+  color: #e2e8f0;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.civic-role-tab.active {
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.22) 0%, rgba(59, 130, 246, 0.18) 100%);
+  border-color: rgba(56, 189, 248, 0.35);
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow:
+    0 4px 15px rgba(6, 182, 212, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.civic-role-tab.active svg {
+  color: #38bdf8;
+}
+
+.civic-role-tab:not(.active) svg {
+  color: #64748b;
+}
+
+/* ==========================================================================
+   ERROR MESSAGE BANNER
+   ========================================================================== */
+
+.civic-error-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 14px;
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(244, 63, 94, 0.35);
+  color: #fecdd3;
+  margin-bottom: 20px;
+  font-size: 12px;
+  line-height: 1.5;
+  box-shadow: 0 4px 18px rgba(239, 68, 68, 0.15);
+}
+
+.civic-error-icon {
+  flex-shrink: 0;
+  color: #fb7185;
+  margin-top: 1px;
+}
+
+/* ==========================================================================
+   FORM INPUTS & LABELS
+   ========================================================================== */
+
+.civic-auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.civic-input-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.civic-input-label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.civic-input-label {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #cbd5e1;
+  letter-spacing: 0.02em;
+}
+
+.civic-forgot-btn {
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #38bdf8;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.civic-forgot-btn:hover {
+  color: #7dd3fc;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Input Wrapper & Ambient Glow */
+.civic-input-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  border-radius: 13px;
+  background: rgba(3, 11, 23, 0.72);
+  border: 1px solid rgba(56, 189, 248, 0.16);
+  transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.35);
+}
+
+.civic-input-box:focus-within {
+  border-color: rgba(56, 189, 248, 0.65);
+  background: rgba(4, 15, 31, 0.95);
+  box-shadow:
+    0 0 0 4px rgba(6, 182, 212, 0.12),
+    0 0 25px rgba(6, 182, 212, 0.2),
+    inset 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.civic-input-icon {
+  margin-left: 15px;
+  color: #64748b;
+  flex-shrink: 0;
+  transition: color 0.2s ease;
+}
+
+.civic-input-box:focus-within .civic-input-icon {
+  color: #38bdf8;
+}
+
+.civic-input-control {
+  width: 100%;
+  height: 46px;
+  padding: 0 14px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #f8fafc;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.civic-input-control::placeholder {
+  color: #475569;
+}
+
+.civic-password-toggle-btn {
+  background: transparent;
+  border: none;
+  color: #64748b;
+  width: 40px;
+  height: 40px;
+  margin-right: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.civic-password-toggle-btn:hover {
+  color: #e2e8f0;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* Remember Me Checkbox */
+.civic-options-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: -2px;
+}
+
+.civic-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #94a3b8;
+  cursor: pointer;
+  user-select: none;
+}
+
+.civic-checkbox-input {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 17px;
+  height: 17px;
+  border-radius: 5px;
+  background: rgba(3, 11, 23, 0.85);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  cursor: pointer;
+  position: relative;
+  display: grid;
+  place-content: center;
+  transition: all 0.2s ease;
+}
+
+.civic-checkbox-input:checked {
+  background: #06b6d4;
+  border-color: #38bdf8;
+  box-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
+}
+
+.civic-checkbox-input:checked::before {
+  content: "";
+  width: 9px;
+  height: 5px;
+  border-left: 2px solid #030712;
+  border-bottom: 2px solid #030712;
+  transform: rotate(-45deg) translate(1px, -1px);
+}
+
+.civic-checkbox-label:hover .civic-checkbox-input {
+  border-color: rgba(56, 189, 248, 0.6);
+}
+
+/* ==========================================================================
+   PRIMARY LOGIN BUTTON
+   ========================================================================== */
+
+.civic-primary-btn {
+  position: relative;
+  width: 100%;
+  height: 48px;
+  border: none;
+  border-radius: 13px;
+  background: linear-gradient(110deg, #06b6d4 0%, #2563eb 50%, #4f46e5 100%);
+  color: #ffffff;
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  box-shadow:
+    0 14px 35px -5px rgba(6, 182, 212, 0.4),
+    inset 0 1px 1px rgba(255, 255, 255, 0.35);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  margin-top: 4px;
+}
+
+.civic-primary-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: 0.6s;
+}
+
+.civic-primary-btn:hover::before {
+  left: 100%;
+}
+
+.civic-primary-btn:hover:not(:disabled) {
+  box-shadow:
+    0 18px 45px -5px rgba(6, 182, 212, 0.55),
+    inset 0 1px 1px rgba(255, 255, 255, 0.5);
+  filter: brightness(1.08);
+}
+
+.civic-primary-btn:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+  filter: grayscale(0.2);
+}
+
+.civic-btn-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: civicSpin 0.75s linear infinite;
+}
+
+/* ==========================================================================
+   SECONDARY ACTIONS & SECURITY FOOTER
+   ========================================================================== */
+
+.civic-auth-footer-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.civic-create-acc-btn {
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-size: 12px;
+  font-weight: 700;
+  color: #38bdf8;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.civic-create-acc-btn:hover {
+  color: #7dd3fc;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.civic-security-assurance {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  color: #64748b;
+  font-size: 10.5px;
+  line-height: 1.4;
+}
+
+.civic-security-assurance svg {
+  color: #34d399;
+  flex-shrink: 0;
+}
+
+.civic-copyright-text {
+  margin-top: 12px;
+  font-size: 10.5px;
+  color: #475569;
+  text-align: center;
+}
+
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+
+@media (max-width: 1120px) {
+  .civic-login-container {
+    grid-template-columns: 1fr;
+    max-width: 580px;
+    gap: 36px;
+    min-height: auto;
+    padding: 20px 0;
+  }
+
+  .civic-brand-showcase {
+    display: none;
+  }
+
+  .civic-mobile-brand {
+    display: flex;
+  }
+
+  .civic-auth-section {
+    max-width: 100%;
+  }
+
+  .civic-glass-card {
+    padding: 34px 28px;
+  }
+}
+
+@media (max-width: 640px) {
+  .civic-login-page {
+    padding: 20px 14px;
+  }
+
+  .civic-glass-card {
+    padding: 28px 20px;
+    border-radius: 22px;
+  }
+
+  .civic-card-header h2 {
+    font-size: 26px;
+  }
+
+  .civic-input-box {
+    min-height: 48px;
+  }
+
+  .civic-input-control {
+    height: 46px;
+    font-size: 13px;
+  }
+
+  .civic-primary-btn {
+    height: 50px;
+    font-size: 13.5px;
+  }
+
+  .civic-role-tab {
+    padding: 8px 10px;
+    font-size: 11px;
+  }
+}

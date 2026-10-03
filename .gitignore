@@ -1,0 +1,47 @@
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+venv312/
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Node
+node_modules/
+frontend/node_modules/
+
+# Build output
+frontend/dist/
+dist/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+
+# Python cache
+.pytest_cache/
+
+# Local database/cache
+*.sqlite
+*.db
